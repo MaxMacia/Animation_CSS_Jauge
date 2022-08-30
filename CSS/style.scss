@@ -1,0 +1,68 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+/* Elements principaux de la page */
+
+*{
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    @include desktop{
+        margin: auto;
+        width: 30%;
+    }
+}
+
+.container{
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+
+    .btn{
+        height: 50px;
+        width: 30%;
+        font-size: 1.5em;
+        color: $color-white;
+        background-color: $color-btn;
+        border: 2px solid darken($color-btn, 20%);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: scale, 0.5s;
+         
+    }
+    .jauge{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border: 2px solid $color-black;
+        height: 200px;
+        width: 8%;
+        border-radius: 20px;
+        background: linear-gradient($color-pink, $color-green);
+        .ball{
+            background-color: lighten($color-black, 60%);
+            border: 2px solid $color-black;
+            height: 25px;
+            border-radius: 20px;
+        }
+    }
+}
+
+.btn{
+    &:hover{
+        transform: scale(1.1);
+    }
+
+    &:hover + .jauge .ball{
+        transform: translateY(-171px);
+        animation-name: jauge-progress;
+        animation-duration: 1500ms;
+    }
+}

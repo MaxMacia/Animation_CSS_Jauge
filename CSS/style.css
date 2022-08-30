@@ -1,0 +1,76 @@
+/* Variables */
+@-webkit-keyframes jauge-progress {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translateY(-171px);
+  }
+}
+@keyframes jauge-progress {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translateY(-171px);
+  }
+}
+/* Elements principaux de la page */
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    margin: auto;
+    width: 30%;
+  }
+}
+
+.container {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+}
+.container .btn {
+  height: 50px;
+  width: 30%;
+  font-size: 1.5em;
+  color: #FFF;
+  background-color: #9356DC;
+  border: 2px solid #6023a9;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: scale, 0.5s;
+}
+.container .jauge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 2px solid #000;
+  height: 200px;
+  width: 8%;
+  border-radius: 20px;
+  background: linear-gradient(#FF79DA, #99E2D0);
+}
+.container .jauge .ball {
+  background-color: #999999;
+  border: 2px solid #000;
+  height: 25px;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn:hover + .jauge .ball {
+  transform: translateY(-171px);
+  -webkit-animation-name: jauge-progress;
+          animation-name: jauge-progress;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}/*# sourceMappingURL=style.css.map */

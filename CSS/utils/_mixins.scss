@@ -1,0 +1,14 @@
+@keyframes jauge-progress{
+    from{
+        transform: translate(0px);
+    }
+    to{
+        transform: translateY(-171px)
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $breakpoints){
+        @content;
+    }
+}
